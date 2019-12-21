@@ -1,0 +1,80 @@
+{
+  "name": "gbook-plugin-theme-default",
+  "description": "GBook的默认主题",
+  "main": "./index.js",
+  "version": "1.0.1",
+  "engines": {
+    "gbook": ">=3.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "browserify": "13.1.0",
+    "eslint": "3.6.1",
+    "font-awesome": "4.6.3",
+    "preboot": "git+https://github.com/mdo/preboot.git#4aab4edd85f076d50609cbe28e4fe66cc0771701",
+    "gitbook-logos": "git+https://github.com/GitbookIO/logos.git#2.0.2",
+    "gitbook-markdown-css": "1.0.1",
+    "jquery": "3.1.1",
+    "less": "2.7.1",
+    "less-plugin-clean-css": "1.5.1",
+    "mousetrap": "1.6.0",
+    "uglify-js": "2.7.3"
+  },
+  "scripts": {
+    "-prepublish": "./src/build.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/54dxs/gbook-plugin-theme-default.git"
+  },
+  "author": "54大学生 <374452668@qq.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/54dxs/gbook-plugin-theme-default/issues"
+  },
+  "contributors": [
+    {
+      "name": "54大学生",
+      "email": "374452668@qq.com"
+    }
+  ],
+  "gbook": {
+    "properties": {
+      "styles": {
+        "type": "object",
+        "title": "自定义样式表",
+        "properties": {
+          "website": {
+            "title": "website输出样式表",
+            "default": "styles/website.css"
+          },
+          "pdf": {
+            "title": "PDF输出样式表",
+            "default": "styles/pdf.css"
+          },
+          "epub": {
+            "title": "ePub输出样式表",
+            "default": "styles/epub.css"
+          },
+          "mobi": {
+            "title": "Mobi输出样式表",
+            "default": "styles/mobi.css"
+          },
+          "ebook": {
+            "title": "ebook(PDF, ePub, Mobi)输出样式表",
+            "default": "styles/ebook.css"
+          },
+          "print": {
+            "title": "替换默认电子书css的样式表",
+            "default": "styles/print.css"
+          }
+        }
+      },
+      "showLevel": {
+        "type": "boolean",
+        "title": "Show level indicator in TOC",
+        "default": false
+      }
+    }
+  }
+}
