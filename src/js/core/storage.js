@@ -1,14 +1,14 @@
 var baseKey = '';
 
 /*
- * Simple module for storing data in the browser's local storage
+ * 在浏览器的本地存储器中存储数据的简单模块
  */
 module.exports = {
     setBaseKey: function(key) {
         baseKey = key;
     },
 
-    // Write something in localstorage
+    // 写入值到本地存储
     set: function(key, value) {
         key = baseKey+':'+key;
 
@@ -17,12 +17,11 @@ module.exports = {
         } catch(e) {}   // eslint-disable-line no-empty
     },
 
-    // Read a value from localstorage
+    // 从本地存储读取值
     get: function(key, def) {
         var value;
         key = baseKey+':'+key;
-        // We need a try block here because window.localStorage is
-        // inaccessible when browser cookies are disabled.
+        // 这里需要一个try块，因为禁用浏览器cookies时无法访问window.localStorage
         try {
             value = localStorage[key];
         } catch(e) {}   // eslint-disable-line no-empty
@@ -37,7 +36,7 @@ module.exports = {
         }
     },
 
-    // Remove a key from localstorage
+    // 根据key删除本地存储的一个值
     remove: function(key) {
         key = baseKey+':'+key;
         try {

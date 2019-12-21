@@ -4,22 +4,22 @@ var navigation = require('./navigation');
 var sidebar =    require('./sidebar');
 var toolbar =    require('./toolbar');
 
-var gitbook = window.gitbook;
+var gbook = window.gbook;
 
 function init() {
-    // Init sidebar
+    // 初始化 侧边栏
     sidebar.init();
 
-    // Init keyboard
+    // 初始化键盘事件
     keyboard.init();
 
-    // Bind dropdown
+    // 绑定下拉列表
     dropdown.init();
 
-    // Init navigation
+    // 初始化 导航
     navigation.init();
 
-    // Add action to toggle sidebar
+    // 添加操作以切换边栏
     toolbar.createButton({
         index: 0,
         icon: 'fa fa-align-justify',
@@ -30,9 +30,9 @@ function init() {
     });
 }
 
-gitbook.events.on('start', init);
+gbook.events.on('start', init);
 
-gitbook.keyboard = keyboard;
-gitbook.navigation = navigation;
-gitbook.sidebar = sidebar;
-gitbook.toolbar = toolbar;
+gbook.keyboard = keyboard;
+gbook.navigation = navigation;
+gbook.sidebar = sidebar;
+gbook.toolbar = toolbar;

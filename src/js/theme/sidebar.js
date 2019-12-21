@@ -2,29 +2,29 @@ var $ = require('jquery');
 
 var platform = require('./platform');
 
-var gitbook = window.gitbook;
+var gbook = window.gbook;
 
 // Toggle sidebar with or withour animation
 function toggleSidebar(_state, animation) {
-    if (gitbook.state != null && isOpen() == _state) return;
+    if (gbook.state != null && isOpen() == _state) return;
     if (animation == null) animation = true;
 
-    gitbook.state.$book.toggleClass('without-animation', !animation);
-    gitbook.state.$book.toggleClass('with-summary', _state);
+    gbook.state.$book.toggleClass('without-animation', !animation);
+    gbook.state.$book.toggleClass('with-summary', _state);
 
-    gitbook.storage.set('sidebar', isOpen());
+    gbook.storage.set('sidebar', isOpen());
 }
 
 // Return true if sidebar is open
 function isOpen() {
-    return gitbook.state.$book.hasClass('with-summary');
+    return gbook.state.$book.hasClass('with-summary');
 }
 
 // Prepare sidebar: state and toggle button
 function init() {
     // Init last state if not mobile
     if (!platform.isMobile()) {
-        toggleSidebar(gitbook.storage.get('sidebar', true), false);
+        toggleSidebar(gbook.storage.get('sidebar', true), false);
     }
 
     // Close sidebar after clicking a link on mobile

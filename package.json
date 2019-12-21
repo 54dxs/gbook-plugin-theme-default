@@ -2,7 +2,7 @@
   "name": "gbook-plugin-theme-default",
   "description": "GBook的默认主题",
   "main": "./index.js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "engines": {
     "gbook": ">=3.0.0"
   },

@@ -12,7 +12,7 @@ function closeDropdown(e) {
     $('.dropdown-menu').removeClass('open');
 }
 
-// Bind all dropdown
+// 绑定所有下拉列表
 function init() {
     $(document).on('click', '.toggle-dropdown', toggleDropdown);
     $(document).on('click', '.dropdown-menu', function(e){ e.stopPropagation(); });

@@ -4,7 +4,7 @@ var url = require('url');
 var loading = require('./loading');
 var platform = require('./platform');
 
-var gitbook = window.gitbook;
+var gbook = window.gbook;
 
 var usePushState = (typeof history.pushState !== 'undefined');
 
@@ -269,7 +269,7 @@ function handleNavigation(relativeUrl, push) {
 
                 // We only use history.pushState for pages generated with GitBook
                 if ($pageBody.length === 0) {
-                    var err = new Error('Invalid gitbook page, redirecting...');
+                    var err = new Error('Invalid gbook page, redirecting...');
                     return deferred.reject(err);
                 }
 
@@ -314,7 +314,7 @@ function handleNavigation(relativeUrl, push) {
                 $('.book-summary').scrollTop(scrollPosition);
 
                 // Update state
-                gitbook.state.$book = $('.book');
+                gbook.state.$book = $('.book');
                 preparePage(!hash);
 
                 // Scroll to hashtag position

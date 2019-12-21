@@ -1,6 +1,6 @@
 var $ = require('jquery');
 
-var gitbook = window.gitbook;
+var gbook = window.gbook;
 
 // List of created buttons
 var buttons = [],
@@ -200,7 +200,7 @@ function removeButtons(ids) {
 }
 
 // When page changed, reset buttons
-gitbook.events.on('page.change', function() {
+gbook.events.on('page.change', function() {
     updateAllButtons();
 });
 

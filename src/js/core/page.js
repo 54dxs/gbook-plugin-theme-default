@@ -7,15 +7,14 @@ var started = false;
 var state = {};
 
 /*
-    Signal that page has changed, this function must be called by
-    themes after page is loaded and when navigation changed
+    表示页面已更改，此函数必须在页面加载后和导航更改时由主题调用
 */
 function hasChanged(ctx) {
     console.log('page has changed', ctx); // eslint-disable-line no-console
     setState(ctx);
 
     if (!started) {
-        // Notify that gitbook is ready
+        // 通知gbook已准备好
         started = true;
         events.trigger('start', ctx.config.pluginsConfig);
     }
@@ -24,17 +23,17 @@ function hasChanged(ctx) {
 }
 
 /*
-    Update current state
+    更新当前状态
 
     data-level="{{ page.level }}"
     data-chapter-title="{{ page.title }}"
     data-filepath="{{ file.path }}"
     data-basepath="{{ './'|resolveFile }}"
-    data-revision="{{ gitbook.time }}"
+    data-revision="{{ gbook.time }}"
     data-innerlanguage="{{ innerlanguage }}">
 */
 function setState(newState) {
-    // API since GitBook v3
+    // GBook v3之后的API
     state.page          = newState.page;
     state.file          = newState.file;
     state.gitbook       = newState.gitbook;
@@ -42,7 +41,7 @@ function setState(newState) {
     state.basePath      = newState.basePath;
     state.book          = newState.book;
 
-    // Deprecated
+    // 已废弃
     state.$book         = $('.book');
     state.revision      = state.gitbook.time;
     state.level         = state.page.level;
@@ -50,18 +49,18 @@ function setState(newState) {
     state.chapterTitle  = state.page.title;
     state.innerLanguage = state.book.language || '';
 
-    // Absolute url to the root of the book (inner book)
+    // 指向书本根目录（内部书本）的绝对url
     state.root = url.resolve(
         location.protocol+'//'+location.host,
         path.dirname(path.resolve(location.pathname.replace(/\/$/, '/index.html'), state.basePath))
     ).replace(/\/?$/, '/');
 
-    // Absolute root to the language (for multilingual book)
+    // 语言的绝对根（对于多语言书籍）
     state.bookRoot = state.innerLanguage? url.resolve(state.root, '..') : state.root;
 }
 
 /*
-    Return state of current page
+    当前页的返回状态
 */
 function getState() {
     return state;

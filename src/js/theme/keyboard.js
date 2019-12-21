@@ -3,7 +3,7 @@ var Mousetrap = require('mousetrap');
 var navigation = require('./navigation');
 var sidebar    = require('./sidebar');
 
-// Bind a keyboard shortcuts
+// 绑定键盘快捷键
 function bindShortcut(keys, fn) {
     Mousetrap.bind(keys, function(e) {
         fn();
@@ -12,7 +12,7 @@ function bindShortcut(keys, fn) {
 }
 
 
-// Bind keyboard shortcuts
+// 绑定键盘快捷键
 function init() {
     // Next
     bindShortcut(['right'], function(e) {

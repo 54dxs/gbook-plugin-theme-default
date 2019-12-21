@@ -4,7 +4,7 @@ module.exports = {
     isMobile: function() {
         return ($(document).width() <= 600);
     },
-    // Breakpoint for navigation links position
+    // 导航链接位置断点
     isSmallScreen: function() {
         return ($(document).width() <= 1240);
     }

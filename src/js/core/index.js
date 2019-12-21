@@ -5,20 +5,20 @@ var storage = require('./storage');
 var page = require('./page');
 
 var isPageReady = false;
-var onLoad = window.gitbook || [];
+var onLoad = window.gbook || [];
 
-// Export APIs for plugins
-var gitbook = {
+// 为插件导出api
+var gbook = {
     events:   events,
     page:     page,
 
-    // Deprecated
+    // 本API已废弃
     state:    page.getState(),
 
-    // Read/Write the localstorage
+    // 读/写本地存储
     storage: storage,
 
-    // Push a function to be called once gitbook is ready
+	// 一旦gbook准备好，就push要调用的函数
     push: function(fn) {
         if (!isPageReady) onLoad.push(fn);
         else fn();
