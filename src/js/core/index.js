@@ -28,18 +28,18 @@ var gbook = {
 
 // Modules mapping for plugins
 var MODULES = {
-    'gitbook': gitbook,
+    'gbook': gbook,
     'jquery':  $
 };
 
-window.gitbook = gitbook;
+window.gbook = gbook;
 window.$ = $;
 window.jQuery = $;
 window.require = function(mods, fn) {
     mods = mods.map(function(mod) {
         mod = mod.toLowerCase();
         if (!MODULES[mod]) {
-            throw new Error('GitBook module '+mod+' doesn\'t exist');
+            throw new Error('GBook module '+mod+' doesn\'t exist');
         }
 
         return MODULES[mod];
@@ -51,7 +51,7 @@ window.require = function(mods, fn) {
 $(document).ready(function() {
     isPageReady = true;
 
-    // Call pile of function once GitBook is ready
+    // Call pile of function once GBook is ready
     $.each(onLoad, function(i, fn) {
         fn();
     });
