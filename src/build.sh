@@ -8,7 +8,7 @@ mkdir -p _assets/website/
 mkdir -p _assets/ebook/
 
 # 编译JS
-browserify src/js/core/index.js | uglifyjs -mc > _assets/website/gitbook.js
+browserify src/js/core/index.js | uglifyjs -mc > _assets/website/gbook.js
 browserify src/js/theme/index.js | uglifyjs -mc > _assets/website/theme.js
 
 # 编译 Website CSS
@@ -26,5 +26,5 @@ cp -R node_modules/font-awesome/fonts/ _assets/website/fonts/fontawesome/
 
 # 拷贝 icons
 mkdir -p _assets/website/images
-cp node_modules/gitbook-logos/output/favicon.ico _assets/website/images/
-cp node_modules/gitbook-logos/output/apple-touch-icon-152.png _assets/website/images/apple-touch-icon-precomposed-152.png
+cp node_modules/gbook-logos/output/favicon.ico _assets/website/images/
+cp node_modules/gbook-logos/output/apple-touch-icon-152.png _assets/website/images/apple-touch-icon-precomposed-152.png

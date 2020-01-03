@@ -15,7 +15,7 @@
 {% endblock %}
 
 {% block javascript %}
-        <script src="{{ "gitbook.js"|resolveAsset }}"></script>
+        <script src="{{ "gbook.js"|resolveAsset }}"></script>
         <script src="{{ "theme.js"|resolveAsset }}"></script>
     {% for resource in plugins.resources.js %}
         {% if resource.url %}
@@ -77,9 +77,9 @@
     <!-- 右侧主体内容区-end -->
 
     <script>
-        var gitbook = gitbook || [];
-        gitbook.push(function() {
-            gitbook.page.hasChanged({{ template.getJSContext()|dump|safe }});
+        var gbook = gbook || [];
+        gbook.push(function() {
+            gbook.page.hasChanged({{ template.getJSContext()|dump|safe }});
         });
     </script>
 </div>

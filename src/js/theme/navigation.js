@@ -255,7 +255,7 @@ function handleNavigation(relativeUrl, push) {
                 'Access-Control-Expose-Headers': 'X-Current-Location'
             },
             success: function(html, status, xhr) {
-                // For GitBook.com, we handle redirection signaled by the server
+                // For GBook.com, we handle redirection signaled by the server
                 var responseURL = xhr.getResponseHeader('X-Current-Location') || uri;
 
                 // Replace html content
@@ -267,7 +267,7 @@ function handleNavigation(relativeUrl, push) {
                     $pageBody = $page.find('.book'),
                     $pageHead;
 
-                // We only use history.pushState for pages generated with GitBook
+                // We only use history.pushState for pages generated with GBook
                 if ($pageBody.length === 0) {
                     var err = new Error('Invalid gbook page, redirecting...');
                     return deferred.reject(err);
