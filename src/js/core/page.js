@@ -36,14 +36,14 @@ function setState(newState) {
     // GBook v3之后的API
     state.page          = newState.page;
     state.file          = newState.file;
-    state.gitbook       = newState.gitbook;
+    state.gbook         = newState.gbook;
     state.config        = newState.config;
     state.basePath      = newState.basePath;
     state.book          = newState.book;
 
     // 已废弃
     state.$book         = $('.book');
-    state.revision      = state.gitbook.time;
+    state.revision      = state.gbook.time;
     state.level         = state.page.level;
     state.filepath      = state.file.path;
     state.chapterTitle  = state.page.title;
