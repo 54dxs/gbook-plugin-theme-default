@@ -2,9 +2,9 @@
   "name": "gbook-plugin-theme-default",
   "description": "GBook的默认主题",
   "main": "./index.js",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "engines": {
-    "gbook": ">=3.0.0"
+    "gbook": ">=2.0.0"
   },
   "dependencies": {},
   "devDependencies": {
